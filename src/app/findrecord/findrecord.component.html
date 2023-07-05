@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="display-4">
+            Find Result
+        </div>
+        <hr>
+        <div class="col-md-6 mt-5">
+            <form [formGroup]="findform">
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Roll No. </label>
+                    <div class="col-sm-10">
+                      <input type="text" formControlName="Roll_No" class="form-control" id="inputEmail3">
+                    </div>
+                  </div>
+                
+                  <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">DOB</label>
+                    <div class="col-sm-10">
+                      <input type="date" formControlName="DOB" class="form-control" id="inputEmail3">
+                    </div>
+                  </div>
+                
+           <div>
+               <span (click)="findsubmit()"><button type="submit" class="btn btn-primary">Search</button></span>
+                &nbsp;
+                <span><button type="reset" class="btn btn-secondary">clear</button></span>
+           </div>
+          </form>
+        </div>
+    </div>
+</div>
+
+<app-getrecord [records]="foundrecord()"></app-getrecord>

@@ -1,0 +1,31 @@
+<div class="container show" *ngIf="records.Score;else nodata">
+    <div class="row">
+
+        <div class="display-4 text-center">Result</div>
+        <hr>
+        <div class="mt-5">
+            <table class="col-md-6 record">
+            <tr>
+                <td>Roll No. :</td>
+                <td>{{records.Roll_No}}</td>
+            </tr>
+            <tr>
+                <td>Name :</td>
+                <td>{{records.Name}}</td>
+            </tr>
+            <tr>
+                <td>Date of Birth :</td>
+                <td>{{records.DOB}}</td>
+            </tr>
+            <tr>
+                <td>Score :</td>
+                <td>{{records.Score}}</td>
+            </tr>
+        </table></div>
+    </div>
+
+</div>
+
+<ng-template #nodata>
+<div class="display-4 text-danger text-center">{{records}}</div>
+</ng-template>

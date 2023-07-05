@@ -1,0 +1,52 @@
+<div class="container">
+
+    <div class="row col-md-6 mt-5">
+
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errmsg">
+            <strong>{{errmsg}}</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="successmsg">
+            <strong>{{successmsg}}</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <a (click)="back()" class="btn btn-primary" style=" width: 15%;">Back</a>
+<form [formGroup]="userForm">
+        <div class="form-group row mt-3">
+            <label for="RollNo" class="col-sm-2 col-form-label">Roll No.</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" formControlName="Roll_No" id="RollNo"/>
+      </div>
+    </div>
+    <div class="form-group row mt-3">
+        <label for="Name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" formControlName="Name" id="Name">
+        </div>
+    </div>
+    <div class="form-group row mt-3">
+        <label for="dob" class="col-sm-2 col-form-label">DOB</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-control" formControlName="DOB" id="dob">
+        </div>
+    </div>
+    <div class="form-group row mt-3">
+        <label for="score" class="col-sm-2 col-form-label">Score</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" formControlName="Score" id="score">
+        </div>
+    </div>
+    <div class="form-group row mt-3">
+        <span class="col-sm-2 col-form-label">
+         <span (click)="userSubmit()"><button type="submit" class="btn btn-primary" *ngIf="!paramId" >Submit</button></span>
+         <span (click)="userUpdate()"><button type="submit" class="btn btn-dark" *ngIf="paramId">Update</button></span>
+        </span>
+        <span class="col-sm-2 col-form-label">
+          <button type="reset" class="btn btn-secondary">Clear</button>
+        </span>
+    </div>
+</form>
+</div>
+</div>

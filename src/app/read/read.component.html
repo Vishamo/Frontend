@@ -1,0 +1,37 @@
+<div class="container">
+<div class="md-col-12">
+  <a class="btn btn-primary mt-4 pos" (click)="goto()">Add Record</a>
+</div>
+<div class="md-col-12">
+    <strong>Total {{recordcount}} Records</strong>
+
+</div>
+
+<div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="sucessmsg">
+    <strong>{{sucessmsg}}</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Roll No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">DateOfBirth</th>
+        <th scope="col">Score</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let val of readData'>
+        <th scope="row">{{val.Roll_No}}</th>
+        <td>{{val.Name}}</td>
+        <td>{{val.DOB}}</td>
+        <td>{{val.Score}}</td>
+        <td><button class="btn btn-success" [routerLink]="['/create',val.idResult]">Edit</button>&nbsp;<button class="btn btn-danger" (click)="deleteID(val.idResult)">Delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
